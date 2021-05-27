@@ -8,14 +8,19 @@
     "prettier/react"
   ],
   "env": {
-    "node": true
+    "node": true,
+    "es6": true
   },
+
+  "plugins": ["react"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "ecmaFeatures": {
       "legacyDecorators": true,
       "jsx": true
-    }
+    },
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
   },
   "settings": {
     "react": {
