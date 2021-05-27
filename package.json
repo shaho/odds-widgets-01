@@ -5,12 +5,9 @@
   "author": "shaho",
   "license": "MIT",
   "repository": "shaho/odds-widget",
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
-  "source": "src/index.js",
-  "engines": {
-    "node": ">=10"
-  },
+  "main": "dist/lib.js",
+  "module": "dist/lib.es.js",
+  "jsnext:main": "dist/lib.es.js",
   "scripts": {
     "test": "react-scripts test --env=jsdom",
     "build": "rollup -c",
@@ -19,10 +16,11 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
   },
+  "dependencies": {},
   "peerDependencies": {
+    "prop-types": "^15.7.2",
     "axios": "^0.21.1",
     "lodash": "^4.17.21",
-    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.0"

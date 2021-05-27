@@ -1,28 +1,37 @@
-import { babel } from '@rollup/plugin-babel'
-import commonjs from '@rollup/plugin-commonjs'
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
+import { babel } from "@rollup/plugin-babel";
+import commonjs from "@rollup/plugin-commonjs";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 // "@babel/plugin-external-helpers"
 
-import pkg from './package.json'
+import pkg from "./package.json";
 
 export default {
-  input: 'src/index.js',
+  input: "src/Lib.js",
   output: [
-    // {
-    //   file: pkg.main,
-    //   format: 'cjs'
-    // },
+    {
+      file: pkg.main,
+      format: "cjs",
+    },
     {
       file: pkg.module,
-      format: 'es'
-    }
+      format: "es",
+    },
+    // {
+    //   file: pkg.module,
+    //   format: "umd",
+    //   name: "Lib",
+    //   globals: {
+    //     react: "React",
+    //   },
+    // },
   ],
+  external: ["react-query"],
   plugins: [
-    babel({ babelHelpers: 'bundled', exclude: 'node_modules/**' }),
+    babel({ babelHelpers: "bundled", exclude: "node_modules/**" }),
     peerDepsExternal(),
 
+    commonjs(),
     nodeResolve(),
-    commonjs()
-  ]
-}
+  ],
+};
