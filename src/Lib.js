@@ -1,2 +1,2 @@
-import OddsWidget from "./index";
-export default { OddsWidget };
+import Odds from "./index";
+export { Odds };

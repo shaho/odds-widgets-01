@@ -16,6 +16,9 @@ export default {
     {
       file: pkg.module,
       format: "es",
+      globals: {
+        react: "React",
+      },
     },
     // {
     //   file: pkg.module,
@@ -26,12 +29,10 @@ export default {
     //   },
     // },
   ],
-  external: ["react-query"],
   plugins: [
     babel({ babelHelpers: "bundled", exclude: "node_modules/**" }),
-    peerDepsExternal(),
-
     commonjs(),
     nodeResolve(),
+    peerDepsExternal(),
   ],
 };

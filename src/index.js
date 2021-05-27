@@ -1,13 +1,6 @@
-// import React from 'react'
-
-// export const ExampleComponent = ({ text }) => {
-//   return <div>Example Component: {text}</div>
-// }
-
-import GlobalStyle from "./styles/global-styles";
-
 import { QueryClient, QueryClientProvider } from "react-query";
 // import { ReactQueryDevtools } from "react-query/devtools";
+import GlobalStyle from "./styles/global-styles";
 
 import Header from "./components/molecules/header";
 import OddsToplist from "./components/organisms/odds-toplist";
@@ -17,7 +10,7 @@ import { Container } from "./styles";
 
 const queryClient = new QueryClient();
 
-export default function OddsWidget() {
+export default function Odds() {
   return (
     <QueryClientProvider client={queryClient} contextSharing={true}>
       <GlobalStyle />
